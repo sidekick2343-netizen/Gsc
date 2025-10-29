@@ -1,4 +1,4 @@
-# GSC: Global Stability Condition
+# GSC: Global Stability
 
 **First provable truth attractor in AI.**
 
