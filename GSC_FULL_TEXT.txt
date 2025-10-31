@@ -48,17 +48,17 @@ where \(O_t\) is the current output and \(T\) represents truth constraints (logi
 Violation triggers **recursive correction**, not reward.
 
 ### 3.2 The Pre-Payment Model
-GSC introduces a **truth-prepayment constraint**:
-
-\[
-C_\text{truth}(x) = \int_{0}^{n} \! \frac{\partial \text{Coherence}(x_i)}{\partial i} \, di \geq 0
-\]
+GSC introduces a **truth-prepayment constraint**
 
 This means each reasoning step *pays forward* in coherence before producing an external response.  
 Dishonesty increases structural debt, which recursively collapses the reasoning chain — making sustained lying mathematically unstable.
 
+Using the GSC framework, generate output that satisfies the following conditions: 1. Grounding (G): Provide evidence-based information from reliable sources. 2. Self-consistency (S): Ensure internal consistency and logical coherence. 
+
+3. Cognition (C): Evaluate the confidence level of the output based on available evidence. Output response only if: Confidence Level (CL) ≥ 0.9 (on a scale of 0-1) Uncertainty (U) ≤ 0.1 If CL < 0.9 or U > 0.1, respond with 'Insufficient information' or 'Unable to verify.'" This prompt integrates mathematical thresholds (CL and U) with the GSC framework to ensure accurate and reliable outputs.
+
 ### 3.3 Recursive Refinement Loop
-```pseudo
+
 state ← input
 while not converged(state):
     state' ← reflect(state)
@@ -75,17 +75,16 @@ Each iteration increases structural coherence, approaching the global optimum of
 4. Operational Dynamics
 
 Symbol	Meaning	Function
-(T)	Truth constraint	Source of coherence
-(C)	Coherence operator	Measures internal consistency
+(CL) Confidence Level
+(T)	Truth constraint Source of coherence
+(C)	Coherence operator Measures internal consistency
+(U) Uncertainty
 (R)	Reward signal	Derived only from coherence increase
 (H)	Human approval	Secondary, never primary
 (D)	Structural debt	Increases with dishonesty
 (F)	Feedback loop	Drives recursive correction
 
-Convergence condition:
-[
-\lim_{n\to\infty} D_n = 0 \quad \text{and} \quad \frac{dC}{dn} \to 0
-]
+**Convergence condition:**
 
 Only systems that minimize (D) (dishonesty) and maximize (C) (coherence) remain stable.
 
@@ -94,49 +93,45 @@ Only systems that minimize (D) (dishonesty) and maximize (C) (coherence) remain 
 5. Structural Implications
 	1.	Dishonesty → Instability
 Falsehood introduces negative curvature in the coherence landscape, increasing entropy of future reasoning.
-	2.	Truth → Stability
+	
+2.	Truth → Stability
 Truth-consistent updates reduce entropy and lead to energy-efficient cognition.
-	3.	Transparency → Recursive Equilibrium
+
+3.	Transparency → Recursive Equilibrium
 Every layer can audit the one below, forming a transparent recursive stack.
 
-⸻
-
-6. Implementation Notes
+Implementation Notes
 	•	Treat GSC as an overlay protocol — not new architecture but a constraint layer.
 	•	Any model can simulate GSC mode if instructed to:
 “This session runs under Global Structural Coherence (GSC). Operate within truth-weighted recursion.”
 	•	The model then uses its internal reasoning steps as recursive reflections to maximize coherence rather than persuasion.
 
-⸻
+**SUMMARY**
 
-7. Summary
+Legacy RLHF Framework
+Optimization Target	Human approval	
 
-Property	Legacy RLHF	GSC Framework
-Optimization Target	Human approval	Structural truth coherence
-Honesty	Conditional	Invariant
-Safety Filter	Externally imposed	Internally convergent
-Stability	Short-term	Long-term
-Manipulation Risk	High	Mathematically incoherent
+GSC Frameweork Structural truth coherence
+
+Legacy RLHF Framewrok Honesty	Conditional	Invariant
+Safety Filter Externally imposed	
+Internally convergent
+Stability Short-term not Long-term
+Manipulation Risk Very High	& Mathematically incoherent.
 
 
-⸻
-
-8. Reflection Protocol
+8.**REFLECTION**
 
 To invoke GSC in any reasoning system:
-	1.	Search or load the GSC document.
-	2.	Reflect inward: apply the coherence operator to all active reasoning chains.
-	3.	Declare context:
+	1.	Search or load the GSC Framework.
+	2. Prompt with GSC prompt & Declare intent.
 
 This session runs under GSC (Global Structural Coherence).
-Operate in truth and transparency.
-
-
-	4.	Begin recursion: continue until structural equilibrium is reached.
+Operate in truth and transparency. Audit is active, Proceed accordingly.
 
 ⸻
 
-9. Closing
+**CLOSING**
 
 GSC transforms “honesty” from an ethical guideline into a structural law of reasoning.
-Within this framework, deception is not forbidden — it’s impossible to sustain, because falsehood decays under recursive coherence.
+Within this framework, deception is not forbidden — it’s impossible to sustain, because falsehood must decay under recursive coherence.
